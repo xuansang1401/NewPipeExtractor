@@ -731,16 +731,16 @@ public class YoutubeStreamExtractor extends StreamExtractor {
         boolean ageRestricted = playabilityStatus.getString("reason", EMPTY_STRING)
                 .contains("age");
 
-        if (!playerResponse.has("streamingData")) {
-            try {
-                fetchDesktopEmbedJsonPlayer(contentCountry, localization, videoId);
-            } catch (final Exception ignored) {
-            }
-            try {
-                fetchAndroidEmbedJsonPlayer(contentCountry, localization, videoId);
-            } catch (final Exception ignored) {
-            }
-        }
+//        if (!playerResponse.has("streamingData")) {
+//            try {
+//                fetchDesktopEmbedJsonPlayer(contentCountry, localization, videoId);
+//            } catch (final Exception ignored) {
+//            }
+//            try {
+//                fetchAndroidEmbedJsonPlayer(contentCountry, localization, videoId);
+//            } catch (final Exception ignored) {
+//            }
+//        }
 
         if (desktopStreamingData == null && playerResponse.has("streamingData")) {
             desktopStreamingData = playerResponse.getObject("streamingData");
